@@ -1,5 +1,5 @@
 #### Small Description :
-    * Make a contest hosting website with minimal features that are present in each such websites.
+   * Make a contest hosting website with minimal features that are present in each such websites.
 
 ## Phase 0 :
     Getting familiar with Git and Brainstorming about the project.
@@ -17,4 +17,9 @@
     
 ## Phase 3 :
     Add feature to create teams and make the contest support team participation as well. 
-    Add feature to create contest dynamically (the admin decides number of question to set and the contest page has features to show that many question and evaluation).
+    Add feature to create contest dynamically (the admin decides number of question to set and 
+    the contest page has features to show that many question and evaluation).
+    
+Note that contribution to this project is not all about writing PHP codes or mysql queries. 
+People working for frontend, testing the website to find bugs or other errors, and helping others
+by documenting it are equally important and are welcome. Also contributing here is not only about adding features and making pull request. Contributors, can help maintainers by reviewing pull requests and commenting in case the feel anything more is required in case of any pull request.
