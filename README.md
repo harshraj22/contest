@@ -31,6 +31,9 @@ It is a contest hosting website to host coding competitions and practice coding.
     Add feature to create contest dynamically (the admin decides number of question to set and 
     the contest page has features to show that many question and evaluation).
     
+## Contributions
+Check the [guidelines](CONTRIBUTING.md) to know more on how to contribute.
+    
 Note that contribution to this project is not all about writing PHP codes or mysql queries. 
 People working for frontend, testing the website to find bugs or other errors, and helping others
 by documenting it are equally important and are welcome. Also contributing here is not only about adding features and making pull request. Contributors, can help maintainers by reviewing pull requests and commenting in case the feel anything more is required in case of any pull request.
