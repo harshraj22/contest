@@ -1,3 +1,7 @@
+
+# Contest 
+[![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/harshraj22/contest) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/harshraj22/contest)  [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/harshraj22/contest/issues/) [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/Naereen/StrapDown.js.svg)](https://GitHub.com/harshraj22/contest/pulls/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://git-scm.com/docs/git-request-pull)  [![HitCount](http://hits.dwyl.io/harshraj22/contest.svg)](http://hits.dwyl.io/harshraj22/contest)
+
 #### Small Description :
    * Make a contest hosting website with minimal features that are present in each such websites.
 
