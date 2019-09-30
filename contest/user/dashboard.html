@@ -2,18 +2,12 @@
 <html>
 <head>
 	<title>Dashboard</title>
-	<style type="text/css">
-      html,body
-      {
-      	height: 100%;
-      	margin: 0px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
 </head>
-<body style="display: flex;flex-direction: column;">
-	<header style="background: blue;height: 8%;">
+<body>
+	<header>
 		<p>
-			Welcome User
+			<h1>Welcome User</h1>
 		</p>
 		<!-- <?php
 		//echo "Welcome, ";
@@ -22,27 +16,29 @@
 		// $usrname = $_POST["username"];
 		 ?> -->
 	</header>
-	<nav style="background: orange;height: 3%;">
+	<nav>
 			Navigation bar
 	</nav>
-	<section style="text-align:center;height: 500;height: 85%; ">
-		<aside style="float:left;width:25%;background: red;height: 100%">
+	<div class="sline"></div>
+    <div class="sline"></div>
+	<section class="outer-section">
+		<aside class="left-pane">
 			<p>
 				Left Pane
 			</p>
 		</aside>
-		<section style="float:left;background: green;width: 50%;height: 100%">
+		<section class="middle-pane">
 			<p>
 				Main Content
 			</p>
 		</section>
-		<aside style="float:left;width:25%;background: yellow;height: 100%">
+		<aside class="right-pane">
 			<p>
 				Right Pane
 			</p>
 		</aside>
 	</section>
-	<footer style="background: magenta;height: 4%;">
+	<footer>
 		<p>This is the footer element.</p>
 	</footer>
 </body>

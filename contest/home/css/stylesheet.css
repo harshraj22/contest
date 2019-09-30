@@ -1,7 +1,7 @@
 .site_name {
   font-family: 'Open Sans', sans-serif;
-  text-align: right;
-  padding-right: 200px
+  text-align: center;
+  padding-right: 200px;
 }
 
 .footer {
@@ -24,4 +24,17 @@
 .login_bar li{
     font-family: 'Open Sans', sans-serif;
     display:inline;
+    float: right;
+    padding: 1px;
+}
+
+.submit-button {
+    width: 100px;
+    height: 34px;
+    text-align: center;
+}
+
+.text-fields{
+    height: 32px;
+    text-align: center;
 }
