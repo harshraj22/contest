@@ -1,0 +1,40 @@
+.site_name {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  padding-right: 200px;
+}
+
+.footer {
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   height: 100px;
+   width: 100%;
+   background-color: purple;
+   color: white;
+   text-align: center;
+}
+
+.sline {
+     width:100%;
+     height:1px;
+     background: black;
+}
+
+.login_bar li{
+    font-family: 'Open Sans', sans-serif;
+    display:inline;
+    float: right;
+    padding: 1px;
+}
+
+.submit-button {
+    width: 100px;
+    height: 34px;
+    text-align: center;
+}
+
+.text-fields{
+    height: 32px;
+    text-align: center;
+}
