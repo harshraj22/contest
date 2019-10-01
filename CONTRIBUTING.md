@@ -16,6 +16,7 @@ and discuss the changes well before opening the pull requests.
 - Test your code well before pushing.
 - Add or change the documentation as needed (in case you use some new methods, add resources for the same [here](https://github.com/harshraj22/contest/tree/master/resources/resources.md))
 - Squash your commits into a single commit with git's [interactive rebase](https://help.github.com/articles/interactive-rebase). Create a new branch if necessary.
+[Relevant link](https://www.internalpointers.com/post/squash-commits-into-one-git)
 - Push your branch to your fork on Github, the remote `origin`.
 - From your fork open a pull request in the correct branch. Target the project's `develop` branch if there is one, else go for `master`!
 - Once the pull request is approved and merged you can pull the changes from `upstream` to your local repo and delete
