@@ -1,6 +1,6 @@
 
-# Contest 
-It is a contest hosting website to host coding competitions and practice coding.
+# CSE-Hub
+CSE-Hub is a contest hosting website to host coding competitions and practice coding.
 
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/harshraj22/contest)  [![Gitter](https://badges.gitter.im/batchOf18/contest.svg)](https://gitter.im/batchOf18/contest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)   [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/harshraj22/contest/issues)  [![GitHub license](https://img.shields.io/badge/license-MIT-red)](https://github.com/harshraj22/contest/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/badge/issues-open-brightgreen)](https://github.com/harshraj22/contest/issues/)   [![GitHub pull-requests closed](https://img.shields.io/badge/pull%20requests-open-blue)](https://GitHub.com/harshraj22/contest/pulls/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://git-scm.com/docs/git-request-pull)  [![HitCount](http://hits.dwyl.io/harshraj22/contest.svg)](http://hits.dwyl.io/harshraj22/contest)
 
