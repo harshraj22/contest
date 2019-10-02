@@ -1,3 +1,9 @@
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
 .site_name {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
@@ -13,6 +19,18 @@
    background-color: purple;
    color: white;
    text-align: center;
+}
+
+.main-pane {
+	float:left;
+	width: 75%;
+	height: 100%;
+}
+
+.right-pane {
+	float:left;
+	width:25%;
+	height: 100%;
 }
 
 .sline {
