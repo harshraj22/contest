@@ -1,0 +1,1 @@
+## reference link for .htaccess: [click here](https://www.thesitewizard.com/apache/password-protect-directory.shtml)
