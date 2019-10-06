@@ -97,6 +97,14 @@
             <p>
                 Right Pane<br>
                 <table>
+                    <tr>
+                        <th>
+                            <a href="../practice_questions/all_questions.php">All questions</a>
+                            <a href="../practice_questions/user_submissions.php?user=<?php echo $currentUserId; ?>">Submissions</a>
+                        </tr>
+                    </tr>
+                </table>
+                <table>
                     <!-- <?php
                         $_GET['user'] = $currentUserId;
                     ?> -->
