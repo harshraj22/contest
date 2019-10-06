@@ -3,7 +3,7 @@
     require_once '../sql_login/login.php';
 
     // in case the user directly want's to access this page, php doesn't know whose profile to display
-    if(!isset($_POST['user'])){
+    if(!isset($_GET['user'])){
         echo <<< _END
             <div>
                 <h1>Error 4040 <br> <h3>The page you requested doesn't exists.</h3></h1>
@@ -12,7 +12,7 @@
         exit;
     }
 
-    $currentUserId = trim($_POST['user']);
+    $currentUserId = trim($_GET['user']);
 
     $conn = mysqli_connect($hostname,$username,$password,$database);
     
@@ -20,9 +20,19 @@
         die("Error while fetching data. Please try after sometimes. <br>".mysqli_connect_error());
 
     $query = "SELECT * FROM user_info WHERE username='{$currentUserId}'";
-    $newQuery = "SELECT * FROM practice_questions_info LIMIT 10";
 
-    // echo $query;
+    // for now we display only 10 questions
+    $order = '';
+    if(isset($_GET['sortBy'])){
+        $sort = ' ORDER BY '.trim($_GET['sortBy']);
+        if(isset($_GET['order']) && $_GET['order']==1)
+            $order = ' DESC ';
+    }
+    else 
+        $sort = '';
+    $newQuery = "SELECT * FROM practice_questions_info ". $sort . $order." LIMIT 10";
+    
+    echo $newQuery;
 
     $result = mysqli_query($conn,$query);
     $newResult = mysqli_query($conn,$newQuery);
@@ -37,13 +47,13 @@
     }
 
     $row = mysqli_fetch_row($result);
-    $newRow = mysqli_fetch_row($newResult);
+    
     $currentUserName = $row[2];
     $currentUserEmail = $row[1];
 
 ?>
 
-<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------- -->
 
 <!DOCTYPE html>
 <html>
@@ -87,20 +97,28 @@
             <p>
                 Right Pane<br>
                 <table>
+                    <!-- <?php
+                        $_GET['user'] = $currentUserId;
+                    ?> -->
                     <tr>
                         <th>
                             Problem
                         </th>
                         <th>
-                            Successful Submission
+                            <form type="GET" name="submissions">
+                                <a href='dashboard.php?user=<?php echo $currentUserId; ?>&&sortBy=successful_submissions'>Successful Submissions</a>
+                            </form>
                         </th>
                         <th>
-                            Date Created     
+                            <form type="GET" name="date_">
+                                <a href='dashboard.php?user=<?php echo $currentUserId; ?>&&sortBy=date_created'>Date Created</a>
+                            </form>     
                         </th>
                     </tr>
                     <?php
                         
                         for($i = 0;$i<$newNumOfRows;$i++){
+                            $newRow = mysqli_fetch_row($newResult);
                             $file = $newRow[0].".txt";
 
                             echo <<< _END
@@ -119,7 +137,7 @@
 
 
                         }
-                        echo "volla<br>";
+                        // echo "volla<br>";
                     ?>
                 </table>
                 
