@@ -8,7 +8,7 @@
 </head>
 <body>
      this is temporary page.<br/> once admin dashboard is ready admin will have button to add practice questions on dashboard.
-    <form action="add_question.php" method="GET">
+    <form action="add_question.php" method="POST">
         <input type="text" name="user">
         <button type="submit">Submit</button>
     </form>

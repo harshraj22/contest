@@ -10,17 +10,34 @@ if(!$conn) {
     die("Error while fetching data. Please try after sometimes. <br>".mysqli_connect_error());
 }
 
-
-
-
-if($_POST['title'] !== ""  && $_POST['ques_id'] !=="" && !trim($_POST['description']) == "" && !trim($_POST['testcase']) == "" && !trim($_POST['solution']) == "" && $_POST['time_limit'] !== "" && $_POST['date'] !== ""){
+if($_POST['title'] !== ""  && $_POST['ques_id'] !=="" && !trim($_POST['description']) == "" && $_POST['time_limit'] !== "" && $_POST['date'] !== "") {
 
     $username = $_POST['btn1'];
     $ques_id = trim($_POST['ques_id']);
     $date = $_POST['date'];
     $description = $_POST["description"];
-    $testcase = $_POST["testcase"];
-    $solution = $_POST['solution'];
+
+    //echo $_POST['testcase0'];
+    //echo $_POST['test_no'];
+
+
+   for($x=0;$x<$_POST['test_no'];$x++) {
+       $testcase = $_POST["testcase$x"];
+       $solution = $_POST["solution$x"];
+
+
+       //creating directories for description and testcases
+       if( !file_exists("../practice questions/all testcases/$ques_id") ) {
+        mkdir("../practice questions/all testcases/$ques_id/solutions",0777,TRUE);
+        mkdir("../practice questions/all testcases/$ques_id/testcases",0777,TRUE);
+        }
+
+        $y = $x+1;
+
+        file_put_contents("../practice questions/all testcases/$ques_id/solutions/sol$y.txt", $solution);
+        file_put_contents("../practice questions/all testcases/$ques_id/testcases/test$y.txt", $testcase);
+
+   }
 
     $query = "CREATE TABLE $ques_id (
               username varchar(255),
@@ -39,21 +56,12 @@ if($_POST['title'] !== ""  && $_POST['ques_id'] !=="" && !trim($_POST['descripti
 
     $name = $ques_id.".txt";
 
-    //creating directories for description and testcases
-    if( !file_exists("../practice questions/all testcases/$ques_id") )
-    {
-     mkdir("../practice questions/all testcases/$ques_id/solutions",0777,TRUE);
-     mkdir("../practice questions/all testcases/$ques_id/testcases",0777,TRUE);
-    }
-    if( !file_exists("../practice questions/all questions/$ques_id") )
-    {
+    if( !file_exists("../practice questions/all questions/$ques_id") ) {
      mkdir("../practice questions/all questions/$ques_id",0777,TRUE);
     }
 
     //adding description, testcases and solution text into files
     file_put_contents("../practice questions/all questions/$ques_id/$name", $description);
-    file_put_contents("../practice questions/all testcases/$ques_id/solutions/sol.txt", $solution);
-    file_put_contents("../practice questions/all testcases/$ques_id/testcases/test.txt", $testcase);
 
     // updating practice_question_info table
     $newquery = 'INSERT INTO practice_questions_info (ques_ID, date_created, successful_submissions, total_submissions, admin) VALUES (?, ?, "0", "0", ?)';
@@ -82,4 +90,5 @@ function prepared_query($mysqli, $sql, $params, $types = "")
     return $stmt;
 }
 
+session_destroy();
 ?>

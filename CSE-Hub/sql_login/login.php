@@ -1,12 +1,9 @@
 <?php
 
 // login details for mysql database
-$hostname = 
+$hostname = "localhost";
 $username = 
 $password =
 $database = "cse_hub";
-$userAuthenticationTable = 
-$userIds = "user";
-$userPasswords = "user";
 
 ?>

@@ -1,18 +1,30 @@
 <?php
+    //ini_set ("display error", 1);
+
     session_start();
     require_once '../sql_login/login.php';
 
     // in case the user directly want's to access this page, php doesn't know whose profile to display
-    if(!isset($_GET['user'])){
+    if(!isset($_POST['user']) && !isset($_SESSION['user'])){
         echo <<< _END
             <div>
-                <h1>Error 4040 <br> <h3>The page you requested doesn't exists.</h3></h1>
+                <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
             </div>
 _END;
-        exit;
-    }
+            exit;
+        }
+        if($_POST['user'] == "") {
+            echo <<< _END
+                <div>
+                    <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
+                </div>
+_END;
+                exit;
+        }
 
-    $currentUserId = trim($_GET['user']);
+    $currentUserId = trim($_POST['user']);
+    $_SESSION['user'] = $currentUserId;
+
 
     $conn = mysqli_connect($hostname,$username,$password,$database);
 
@@ -30,6 +42,9 @@ _END;
         $noUserMessage = "<div> No admin {$currentUserId} Exists.<br/> </div>";
         die($noUserMessage);
     }
+
+    $currentUserId = $_SESSION['user'] ;
+    $pass_no = $_POST['test_no'];
 
     $row = mysqli_fetch_row($result);
     $currentUserName = $row[2];
@@ -76,35 +91,56 @@ _END;
             </p>
 
             <div class="container">
-                <form action = "update.php" method = "post">
-                    <ul class="add">
-                    <li class="add">Title: <input type="text" name="title"></li><br/>
-                    <li class="add">Question Id: <input type="text" name="ques_id"></li><br/><br/>
-                    <li class="add">
-                    Question Description: <br/><br/>
-                                      <textarea rows = "5" cols = "50" name = "description">
-                                  </textarea><br/><br/>
-                    </li>
-                    <li class="add">
-                    testcase: <br/>
-                                      <textarea minlength=20 rows = "5" cols = "50" name = "testcase">
-                                  </textarea><br/><br/>
-                    </li>
-                    <li class="add">
-                    solution: <br/>
-                                      <textarea rows = "5" cols = "50" name = "solution">
-                                      </textarea><br/><br/>
-                    </li>
-                    <li class="add">Date<input type="date" name="date"></li><br/>
-                    <li class="add">Time Limit in seconds:<input type="number" name="time_limit"></li><br/>
-                    <li class="add"><input type="submit" value="Add"/></button></li>
-                    </ul>
 
+                <form action = "add_question.php" method = "post">
+                type total number of testcases you want to add for the question and click go.
                     <?php
                     echo <<<_END
-                    <input type="hidden" name="btn1" value="$currentUserId"/></button>
+                    <input type="number" min="1" step="1" name="test_no" value="go"/>
+                    <input type="submit" name="btn2" value="go"/></button>
+                    <input type="hidden" name="user" value="$currentUserId"/>
 _END;
                     ?>
+                </form>
+
+                <form action = "update.php" method = "post">
+                    <ul class="add">
+                    <li class="add">Title: <input type="text" name="title" required></li><br/>
+                    <li class="add">Question Id: <input type="text" name="ques_id" required></li><br/><br/>
+                    <li class="add">Date<input type="date" name="date" required></li><br/>
+                    <li class="add">Time Limit in seconds:<input type="number" min="0" step="0.5" name="time_limit" required></li><br/>
+                    <li class="add">
+                    Question Description: <br/><br/>
+                                      <textarea minlength=20 rows = "5" cols = "50" name = "description"></textarea><br/><br/>
+                    </li>
+
+                    <?php
+
+                    echo<<< _END
+
+                    <input type="hidden" name="btn1" value="$currentUserId"/></button>
+                    <input type="hidden" name="test_no" value="$pass_no"/>
+
+_END;
+                    //$_SESSION['test_no'] = $_POST['test_no'];
+                    for($x = 0; $x<$_POST['test_no']; $x++) {
+                        echo <<<_END
+
+                        <li class="add">
+                        testcase1: <br/>
+                                          <textarea rows = "3" cols = "50" name = "testcase$x"></textarea><br/><br/>
+                        </li>
+                        <li class="add">
+                        solution1: <br/>
+                                          <textarea rows = "3" cols = "50" name = "solution$x"></textarea><br/><br/>
+                        </li>
+
+_END;
+                    }
+
+                    ?>
+                    <li class="add"><input type="submit" value="Add"/></button></li>
+                    </ul>
 
                 </form>
             </div>
@@ -115,9 +151,11 @@ _END;
 
     </section>
 
+
     <footer>
         <p>This is the footer element.</p>
     </footer>
+    
 
 </body>
 </html>

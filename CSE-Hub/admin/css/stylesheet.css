@@ -44,9 +44,10 @@ body
 ul li.add{ list-style-type: none; }
 
 footer {
-   position:absolute;
+    position: fixed;
+   /*position:relative;*/
    left: 0;
-   bottom: 0;
+   bottom: 0px;
    height: 4%;
    width: 100%;
    background-color: purple;
