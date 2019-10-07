@@ -3,10 +3,10 @@
 // login details for mysql database
 $hostname = 
 $username = 
-$password = 
-$database = 
+$password =
+$database = "cse_hub";
 $userAuthenticationTable = 
-$userIds = 
-$userPasswords = 
+$userIds = "user";
+$userPasswords = "user";
 
 ?>
