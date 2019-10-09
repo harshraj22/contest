@@ -16,7 +16,7 @@
     	<div class="sline"></div>
 	</header>
 	<nav>
-			<form action="sort.php" method="POST">
+			<form action="redirect.php" method="POST">
 				<ul>
 					<li><input class="button" type="submit" name="new_problem" value="Create Problem"></li>
 					<li><input class="button" type="submit" name="host"   value="Host a Contest"></li>
