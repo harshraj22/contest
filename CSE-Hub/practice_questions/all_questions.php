@@ -44,10 +44,10 @@
             for($i=0;$i<$num_of_rows;$i++){
                 $row = mysqli_fetch_row($result);
                 echo "<tr>";
-                    echo "<th>".$row[0]."</th>";
-                    echo "<th>"."title to be inserted"."</th>";
-                    echo "<th>".$row[2]."</th>";
-                    echo "<th>".$row[1]."</th>";
+                    echo "<th><a href='./all_questions/{$row[0]}/{$row[0]}.txt' >{$row[0]}</a></th>";
+                    echo "<th>"."title to be inserted using question table"."</th>";
+                    echo "<th>{$row[2]}</th>";
+                    echo "<th>{$row[1]}</th>";
 
                 echo "</tr>";
             }
