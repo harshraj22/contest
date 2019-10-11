@@ -1,4 +1,0 @@
-AuthName "Project"
-AuthType Basic
-AuthUserFile ./../.htpasswd
-require valid-user

@@ -32,7 +32,7 @@
         $sort = '';
     $newQuery = "SELECT * FROM practice_questions_info ". $sort . $order." LIMIT 10";
     
-    echo $newQuery;
+    // echo $newQuery;
 
     $result = mysqli_query($conn,$query);
     $newResult = mysqli_query($conn,$newQuery);
@@ -99,8 +99,8 @@
                 <table>
                     <tr>
                         <th>
-                            <a href="../practice_questions/all_questions.php">All questions</a>
-                            <a href="../practice_questions/user_submissions.php?user=<?php echo $currentUserId; ?>">Submissions</a>
+                            <a href='../practice questions/all_questions.php'>All questions</a>
+                            <a href='../practice questions/user_submissions.php?user=<?php echo $currentUserId; ?>'>Submissions</a>
                         </tr>
                     </tr>
                 </table>
@@ -132,7 +132,7 @@
                             echo <<< _END
                                 <tr>
                                     <th>
-                                        <a href='../practice_questions/all_questions/{$newRow[0]}/{$file}'>{$newRow[0]}</a>
+                                        <a href='../practice questions/all questions/{$newRow[0]}/{$file}'>{$newRow[0]}</a>
                                     </th>
                                     <th>
                                         {$newRow[2]}
