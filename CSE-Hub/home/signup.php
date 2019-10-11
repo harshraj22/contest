@@ -11,14 +11,14 @@ if(!$conn) {
 
 if(isset($_POST['register_uname']) && isset($_POST['register_pass']) && isset($_POST['register_name']) && isset($_POST['register_email']))
 {
-	$username = $_POST['register_uname'];
-	$password = $_POST['register_pass'];
+	$register_username = $_POST['register_uname'];
+	$register_password = $_POST['register_pass'];
 	$name = $_POST['register_name'];
 	$email = $_POST['register_email'];
 
  }
 
- $query = "CREATE TABLE $username (ques_id varchar(255), status varchar(128), time_taken float, link varchar(255))";
+ $query = "CREATE TABLE $register_username (ques_id varchar(255), status varchar(128), time_taken float, link varchar(255))";
 
  $result = mysqli_query($conn,$query);
 
@@ -31,25 +31,25 @@ if(!$result)
 else
 {
 	//Creating the directory to store the practice question solutions
-	if(!file_exists("../solutions/$username"))
+	if(!file_exists("../solutions/$register_username"))
 	{
-		mkdir("../solutions/$username",0777,TRUE);
+		mkdir("../solutions/$register_username",0777,TRUE);
 	}
 
 	$new_query = "INSERT INTO user_info (username, email, name) VALUES (?,?,?)";
-	prepared_query($conn,$new_query,[$username,$email,$name]);
+	prepared_query($conn,$new_query,[$register_username,$email,$name]);
 
 	if(!$new_query)
 	{
-		die("Error in registration of $username<br>".mysqli_error($conn));
+		die("Error in registration of $register_username<br>".mysqli_error($conn));
 	}
 	else
 	{
 		$newer_query = "INSERT INTO authenticate (username, password) VALUES (?,?)";
-		prepared_query($conn,$newer_query,[$username,$password]);
+		prepared_query($conn,$newer_query,[$register_username,$register_password]);
 		if(!$newer_query)
 		{
-			die("Error in registration of $username<br>".mysqli_error($conn));
+			die("Error in registration of $register_username<br>".mysqli_error($conn));
 		}
 		else
 		{
