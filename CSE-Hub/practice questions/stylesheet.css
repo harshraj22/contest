@@ -56,10 +56,16 @@ ul li.add{ list-style-type: none; }
     text-align: left;
 }
 
-.submit {
+.submit_top {
     position:relative;
     top: 110px;
     left: 50px;
+}
+
+.submit_bottom {
+    position: absolute;
+    bottom: -150px;
+    left: 900px;
 }
 /*
 .below {

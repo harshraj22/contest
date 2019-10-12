@@ -51,13 +51,18 @@ _END;
             <div class="title">
                 <h1 class="ques_id"><?php echo "$ques_id"; ?></h1>
             </div>
-            <div class="submit">
+            <div class="submit_top">
                 <form action="submission.html" method="GET">
                     <button type="submit">Submit</button>
                 </form>
             </div>
             <div class="container">
                 <?php echo nl2br($content); ?>
+            </div>
+            <div class="submit_bottom">
+                <form action="submission.html" method="GET">
+                    <button type="submit">Submit</button>
+                </form>
             </div>
 
         </section>
