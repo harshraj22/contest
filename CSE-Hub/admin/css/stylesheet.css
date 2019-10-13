@@ -1,1 +1,90 @@
+html
+{
+  	height: 100%;
+  	margin: 0px;
+}
 
+body
+{
+  	height: 100%;
+  	margin: 0px;
+  	display: flex;
+  	flex-direction: column;
+}
+
+.outer-section {
+	position: relative;
+	top : 8%;
+	text-align:center;
+	height: 85%;
+}
+
+.left-pane {
+	float:left;
+	width:25%;
+	height: 100%;
+}
+
+.middle-pane {
+	float:left;
+	width: 50%;
+	height: 100%;
+}
+
+.right-pane {
+	float:left;
+	width:25%;
+	height: 100%;
+}
+
+.sline {
+     width:100%;
+     height:1px;
+     background: black;
+}
+
+footer {
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   height: 8%;
+   width: 100%;
+   background-color: #b9175b;
+   color: white;
+   text-align: center;
+}
+
+header {
+	height: 8%;
+	position: relative;
+	left : 2%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+	position: relative;
+	top: 5%;
+	height:10%;
+	text-align: center;
+}
+
+nav ul li{
+	display: inline;
+	text-align: center;
+	padding: 5px;
+}
+
+.button{
+	background-color:rgba(0, 0, 0, 0.068);
+	text-align:center;
+	border: 0px solid transparent;
+	height: 50px;
+	width:200px;
+	transition: 0.3s ease; 
+	font-size: 15px;
+}
+
+.button:hover{
+	background-color:hsla(0, 1%, 37%, 0.98);
+	font-style: italic;
+}
