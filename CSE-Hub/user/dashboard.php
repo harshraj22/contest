@@ -8,14 +8,14 @@
             <div>
                 <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
             </div>
-        _END;
+_END;
         exit;
     }
 
     $currentUserId = trim($_GET['user']);
 
     $conn = mysqli_connect($hostname,$username,$password,$database);
-    
+
     if(!$conn)
         die("Error while fetching data. Please try after sometimes. <br>".mysqli_connect_error());
 
@@ -28,10 +28,10 @@
         if(isset($_GET['order']) && $_GET['order']==1)
             $order = ' DESC ';
     }
-    else 
+    else
         $sort = '';
     $newQuery = "SELECT * FROM practice_questions_info ". $sort . $order." LIMIT 10";
-    
+
     // echo $newQuery;
 
     $result = mysqli_query($conn,$query);
@@ -47,7 +47,7 @@
     }
 
     $row = mysqli_fetch_row($result);
-    
+
     $currentUserName = $row[2];
     $currentUserEmail = $row[1];
 
@@ -66,7 +66,7 @@
         <p>
             <h1>Welcome User</h1>
         </p>
-        
+
     </header>
     <nav>
             Navigation bar
@@ -90,7 +90,13 @@
             <p>
                 Main Content
                 // ADD User Stats Here.
-
+                <?php
+                echo <<< _END
+                <form action="profile.php" method="GET">
+                    <button type="submit" name="username" value="$currentUserId">Profile</button>
+                </form>
+_END;
+                ?>
             </p>
         </section>
         <aside class="right-pane">
@@ -120,11 +126,11 @@
                         <th>
                             <form type="GET" name="date_">
                                 <a href='dashboard.php?user=<?php echo $currentUserId; ?>&&sortBy=date_created'>Date Created</a>
-                            </form>     
+                            </form>
                         </th>
                     </tr>
                     <?php
-                        
+
                         for($i = 0;$i<$newNumOfRows;$i++){
                             $newRow = mysqli_fetch_row($newResult);
                             $file = $newRow[0].".txt";
@@ -141,14 +147,14 @@
                                         {$newRow[1]}
                                     </th>
                                 </tr>
-                            _END;
+_END;
 
 
                         }
                         // echo "volla<br>";
                     ?>
                 </table>
-                
+
             </p>
         </aside>
     </section>
