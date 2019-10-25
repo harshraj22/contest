@@ -32,6 +32,7 @@ CSE-Hub is a contest hosting website to host coding competitions and practice co
     the contest page has features to show that many question and evaluation).
     
 ## Contributions
+Newcomers are requested to go through this [guide](newComers.md).
 Check the [guidelines](CONTRIBUTING.md) to know more on how to contribute.
     
 Note that contribution to this project is not all about writing PHP codes or mysql queries. 

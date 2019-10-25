@@ -23,7 +23,7 @@ if (!empty($_POST['name']) && !empty($_POST['pass'])) {
             header('Location: ./../home/home.html');
         }
         else {
-            header('Location: ./../user/dashboard.html');
+            header('Location: ./../user/dashboard.php');
         }
     }
 }
