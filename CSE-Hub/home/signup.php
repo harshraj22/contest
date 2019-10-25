@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../sql_login/login.php'	;
 
@@ -24,7 +24,7 @@ if(isset($_POST['register_uname']) && isset($_POST['register_pass']) && isset($_
 
 if(!$result)
 {
-        header('Refresh:4; url=home.html');
+        header('Refresh:4; url=home.php');
         echo 'Username is not available. Try new Username.';
         exit();
 }
@@ -46,14 +46,14 @@ else
 	else
 	{
 		$newer_query = "INSERT INTO authenticate (username, password) VALUES (?,?)";
-		prepared_query($conn,$newer_query,[$register_username,$register_password]);
-		if(!$newer_query)
+		$stmt = prepared_query($conn,$newer_query,[$register_username,$register_password]);
+		if(!$stmt)
 		{
 			die("Error in registration of $register_username<br>".mysqli_error($conn));
 		}
 		else
 		{
-			header('Refresh:4; url=home.html');
+			header('Refresh:4; url=home.php');
 			echo "<h1>Successfully Registered</h1>";
 			exit();
 		}

@@ -4,7 +4,7 @@ ini_set("display error",1);
 if(!isset($_GET['ques_id'])){
     echo <<< _END
         <div>
-            <h1>Error 4040 <br> <h3>The page you requested doesn't exists.</h3></h1>
+            <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
         </div>
 _END;
     exit;

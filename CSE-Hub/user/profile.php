@@ -20,11 +20,11 @@ if(!$conn)
     die("Error while fetching data. Please try after sometimes. <br>".mysqli_connect_error());
 
 $query = "SELECT * FROM user_info WHERE username='{$currentUserId}'";
-$query_wa = "SELECT COUNT(result) FROM user_submissions WHERE result LIKE 'WA'";
-$query_ac = "SELECT COUNT(result) FROM user_submissions WHERE result LIKE 'AC'";
-$query_tle = "SELECT COUNT(result) FROM user_submissions WHERE result LIKE 'TLE'";
-$query_pa = "SELECT COUNT(result) FROM user_submissions WHERE result LIKE 'PA'";
-$query_re = "SELECT COUNT(result) FROM user_submissions WHERE result LIKE 'RE'";
+$query_wa = "SELECT COUNT(status) FROM $currentUserId WHERE status LIKE 'WA'";
+$query_ac = "SELECT COUNT(status) FROM $currentUserId WHERE status LIKE 'AC'";
+$query_tle = "SELECT COUNT(status) FROM $currentUserId WHERE status LIKE 'TLE'";
+$query_pa = "SELECT COUNT(status) FROM $currentUserId WHERE status LIKE 'PA'";
+$query_re = "SELECT COUNT(status) FROM $currentUserId WHERE status LIKE 'RE'";
 $result = mysqli_query($conn,$query);
 $result_wa = mysqli_query($conn,$query_wa);
 $result_ac = mysqli_query($conn,$query_ac);
