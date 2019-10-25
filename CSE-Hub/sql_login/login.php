@@ -4,9 +4,9 @@
 $hostname =
 $username =
 $password =
-$database = 
-$userAuthenticationTable = 
+$database =
+$userAuthenticationTable =
 $userIds =
-$userPasswords =
+$userPasswords = 
 
 ?>
