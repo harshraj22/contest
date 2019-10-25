@@ -2,7 +2,7 @@
 
 All contributions that help making this project better are welcome be it a simple spelling correction
 in the documentation or adding a complete new feature. Contributors are expected to create issues
-and discuss the changes well before opening the pull requests. 
+and discuss the changes well before opening the pull requests.Join our [gitter channel](https://gitter.im/batchOf18/contest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) to find out more opportunities to contribute.
 
 ##### Making Pull Request :
 
