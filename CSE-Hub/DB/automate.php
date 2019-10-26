@@ -67,6 +67,12 @@
         else
             die("Error creating practice questions info table.".mysqli_error($conn));
 
+        $table7 = "CREATE TABLE all_contest_details (contest_ID varchar(10) NOT NULL PRIMARY KEY, contest_name varchar(30) NOT NULL, admin varchar(10) NOT NULL, date_created date, contest_length float DEFAULT 0.0) ";
+        if(mysqli_query($conn, $table7))
+            echo "Success creating table to store all contest details. <br/>";
+        else
+            die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
     }
 
 ?>
