@@ -1,9 +1,14 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     require_once '../sql_login/login.php';
 
     // in case the user directly want's to access this page, php doesn't know whose profile to display
-    if(!isset($_GET['user'])){
+
+    if(!isset($_SESSION['username'])){
+        //echo $_SESSION['username'];
+        //echo session_id();
         echo <<< _END
             <div>
                 <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
@@ -12,7 +17,7 @@ _END;
         exit;
     }
 
-    $currentUserId = trim($_GET['user']);
+    $currentUserId = trim($_SESSION['username']);
 
     $conn = mysqli_connect($hostname,$username,$password,$database);
 
@@ -138,7 +143,10 @@ _END;
                             echo <<< _END
                                 <tr>
                                     <th>
-                                        <a href='../practice questions/all questions/{$newRow[0]}/{$file}'>{$newRow[0]}</a>
+                                    <form action="../practice questions/display_question.php" method="GET">
+                                        <input type="hidden" name="ques_id" value=$newRow[0]>
+                                        <button type="submit">$newRow[0]</button>
+                                    </form>
                                     </th>
                                     <th>
                                         {$newRow[2]}

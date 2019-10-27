@@ -65,9 +65,9 @@ if($_POST['title'] !== ""  && $_POST['ques_id'] !=="" && !trim($_POST['descripti
 
     // updating practice_question_info table
     $newquery = 'INSERT INTO practice_questions_info (ques_ID, date_created, successful_submissions, total_submissions, admin) VALUES (?, ?, "0", "0", ?)';
-    prepared_query($conn, $newquery, [$ques_id, $date, $username]);
+    $stmt = prepared_query($conn, $newquery, [$ques_id, $date, $username]);
 
-    if(!$newquery)
+    if(!$stmt)
         die("Error fetching details of {$currentUserId}<br>".mysqli_error($conn));
     else {
         header('Refresh:4; url=admin_login.php');

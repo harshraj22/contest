@@ -32,7 +32,7 @@ _END;
         die("Error while fetching data. Please try after sometimes. <br>".mysqli_connect_error());
     }
 
-    $query = "SELECT * FROM user_info WHERE username='{$currentUserId}'";
+    $query = "SELECT * FROM admin_info WHERE username='{$currentUserId}'";
 
     $result = mysqli_query($conn, $query);
 
@@ -155,7 +155,7 @@ _END;
     <footer>
         <p>This is the footer element.</p>
     </footer>
-    
+
 
 </body>
 </html>

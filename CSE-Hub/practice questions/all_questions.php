@@ -9,7 +9,7 @@
 
     if(!$result)
         die("Error fetching all questions.".mysqli_error($conn));
-    
+
     $num_of_rows = mysqli_num_rows($result);
 
 ?>
@@ -43,8 +43,15 @@
 
             for($i=0;$i<$num_of_rows;$i++){
                 $row = mysqli_fetch_row($result);
-                echo "<tr>";
-                    echo "<th><a href='./all questions/{$row[0]}/{$row[0]}.txt' >{$row[0]}</a></th>";
+                echo <<<_END
+                <tr><th>
+                    <form action="display_question.php" method="GET">
+                        <input type="hidden" name="ques_id" value=$row[0]>
+                        <button type="submit">$row[0]</button>
+                    </form>
+                    </th>"
+_END;
+                    //echo "<th><a href='./all questions/{$row[0]}/{$row[0]}.txt' >{$row[0]}</a></th>";
                     echo "<th>"."title to be inserted using question table"."</th>";
                     echo "<th>{$row[2]}</th>";
                     echo "<th>{$row[1]}</th>";
