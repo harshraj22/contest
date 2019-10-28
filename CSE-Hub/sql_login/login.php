@@ -2,11 +2,11 @@
 
 // login details for mysql database
 $hostname = "localhost";
-$username = 
+$username =
 $password =
 $database = "cse_hub";
 $userAuthenticationTable = "authenticate";
 $userIds =
-$userPasswords =
+$userPasswords = 
 
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 26, 2019 at 03:35 AM
+-- Generation Time: Oct 28, 2019 at 09:43 PM
 -- Server version: 5.7.27-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-0ubuntu0.16.04.6
 
@@ -39,6 +39,20 @@ CREATE TABLE `admin_info` (
 
 INSERT INTO `admin_info` (`username`, `email`, `name`, `display_email`) VALUES
 ('super', 'super@user.com', 'Thomas William', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_contest_details`
+--
+
+CREATE TABLE `all_contest_details` (
+  `contest_ID` varchar(10) NOT NULL,
+  `contest_name` varchar(30) NOT NULL,
+  `admin` varchar(10) NOT NULL,
+  `date_created` date NOT NULL,
+  `contest_length` float DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -89,8 +103,8 @@ INSERT INTO `practice_questions_info` (`ques_ID`, `date_created`, `successful_su
 --
 
 CREATE TABLE `q1` (
-  `username` varchar(255) DEFAULT NULL,
-  `status` varchar(128) DEFAULT NULL,
+  `username` varchar(10) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
   `time_taken` float DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -102,8 +116,8 @@ CREATE TABLE `q1` (
 --
 
 CREATE TABLE `user` (
-  `ques_id` varchar(255) DEFAULT NULL,
-  `status` varchar(128) DEFAULT NULL,
+  `ques_id` varchar(20) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
   `time_taken` float DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -122,8 +136,8 @@ INSERT INTO `user` (`ques_id`, `status`, `time_taken`, `link`) VALUES
 --
 
 CREATE TABLE `user2` (
-  `ques_id` varchar(255) DEFAULT NULL,
-  `status` varchar(128) DEFAULT NULL,
+  `ques_id` varchar(20) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
   `time_taken` float DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
