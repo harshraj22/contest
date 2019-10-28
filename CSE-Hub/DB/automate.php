@@ -50,7 +50,12 @@
 
 
         // no need to store relative path of submitted sulutions by the user (due to directory structure)
-        $table4 = "CREATE TABLE user_submissions (ques_id varchar(5) NOT NULL, result varchar(4), time varchar(5) DEFAULT NULL, lang varchar(6) NOT NULL)";
+        $table4 = "CREATE TABLE `q1` (
+          `username` varchar(10) DEFAULT NULL,
+          `status` varchar(10) DEFAULT NULL,
+          `time_taken` float DEFAULT NULL,
+          `link` varchar(255) DEFAULT NULL
+        )";
 
         if(mysqli_query($conn,$table4))
             echo "Success Creating user_submissions table.<br/>";
@@ -72,6 +77,76 @@
             echo "Success creating table to store all contest details. <br/>";
         else
             die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+            $table8 = "CREATE TABLE `user` (
+              `ques_id` varchar(20) DEFAULT NULL,
+              `status` varchar(10) DEFAULT NULL,
+              `time_taken` float DEFAULT NULL,
+              `link` varchar(255) DEFAULT NULL
+            ) ";
+            if(mysqli_query($conn, $table8))
+                echo "Success creating table to store all contest details. <br/>";
+            else
+                die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+
+                $table9 = "CREATE TABLE `user2` (
+                  `ques_id` varchar(20) DEFAULT NULL,
+                  `status` varchar(10) DEFAULT NULL,
+                  `time_taken` float DEFAULT NULL,
+                  `link` varchar(255) DEFAULT NULL
+                ) ";
+                if(mysqli_query($conn, $table9))
+                    echo "Success creating table to store all contest details. <br/>";
+                else
+                    die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+        $query = "INSERT INTO `user_info` (`username`, `email`, `name`, `display_email`) VALUES
+        ('user', 'yy@iitdh.ac', 'user', b'1'),
+        ('user2', 'bb@yy.t', 'user2', b'1')";
+
+        if(mysqli_query($conn, $query))
+            echo "Success creating table to store all contest details. <br/>";
+        else
+            die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+        $query2 = "INSERT INTO `user` (`ques_id`, `status`, `time_taken`, `link`) VALUES
+        ('q1', 'AC', 1, 'vvvbb')";
+
+        if(mysqli_query($conn, $query2))
+            echo "Success creating table to store all contest details. <br/>";
+        else
+            die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+
+        $query3 = "INSERT INTO `practice_questions_info` (`ques_ID`, `date_created`, `successful_submissions`, `total_submissions`, `admin`) VALUES
+        ('q1', '2019-10-26', 0, 0, 'super')";
+
+        if(mysqli_query($conn, $query3))
+            echo "Success creating table to store all contest details. <br/>";
+        else
+            die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+        $query4 = "INSERT INTO `authenticate` (`username`, `password`, `isAdmin`) VALUES
+        ('super', 'super', b'1'),
+        ('user', 'user', b'0'),
+        ('user2', 'user2', b'0')";
+
+
+                if(mysqli_query($conn, $query4))
+                    echo "Success creating table to store all contest details. <br/>";
+                else
+                    die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
+
+        $query5 = "INSERT INTO `admin_info` (`username`, `email`, `name`, `display_email`) VALUES
+        ('super', 'super@user.com', 'Thomas William', b'1')";
+
+        if(mysqli_query($conn, $query5))
+            echo "Success creating table to store all contest details. <br/>";
+        else
+            die("Error creating table to store all contest details.<br>".mysqli_error($conn));
+
 
     }
 
