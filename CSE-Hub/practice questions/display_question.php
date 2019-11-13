@@ -52,7 +52,7 @@ _END;
                 <h1 class="ques_id"><?php echo "$ques_id"; ?></h1>
             </div>
             <div class="submit_top">
-                <form action="submission.html" method="GET">
+                <form action="submissions.html?qid=<?php echo "$ques_id"; ?>" method="GET">
                     <button type="submit">Submit</button>
                 </form>
             </div>
