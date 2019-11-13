@@ -60,7 +60,7 @@ _END;
                 <?php echo nl2br($content); ?>
             </div>
             <div class="submit_bottom">
-                <form action="submission.html" method="GET">
+                <form action="submissions.html?qid=<?php echo "$ques_id"; ?>" method="GET">
                     <button type="submit">Submit</button>
                 </form>
             </div>
