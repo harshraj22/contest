@@ -1,5 +1,12 @@
 <?php
-$ques_id = $_POST['qid'];
+$ques_id = $_GET['qid'];
+if(!isset($_GET['qid']))
+{
+    echo "      <script>
+    alert('No question selected! Please go back');
+    window.location.href='./all_questions.php';
+    </script>";
+}
 session_start();
 ?>
 
@@ -20,7 +27,7 @@ session_start();
     Select Language: &emsp;
     <input list="language-list" id="languages" name="languages" />
 
-    <datalist id="language-list">
+    <datalist id="language-list" name="languages">
         <option value="C"></option>
         <option value="C++"></option>
         <option value="Python3"></option>

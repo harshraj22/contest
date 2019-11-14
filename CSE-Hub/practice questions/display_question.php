@@ -52,7 +52,7 @@ _END;
                 <h1 class="ques_id"><?php echo $ques_id; ?></h1>
             </div>
             <div class="submit_top">
-                <form action="submissions.php" method="POST">
+                <form action="submissions.php" method="GET">
                 <input type="hidden" value="<?php echo $ques_id; ?>" name="qid">
                     <input type="submit" value="Submit Code">
                 </form>
@@ -61,7 +61,7 @@ _END;
                 <?php echo nl2br($content); ?>
             </div>
             <div class="submit_bottom">
-                <form action="submissions.php" method="POST">
+                <form action="submissions.php" method="GET">
                 <input type="hidden" value="<?php echo $ques_id; ?>" name="qid">
                     <input type="submit" value="Submit Code">
                 </form>
