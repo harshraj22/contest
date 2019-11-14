@@ -1,5 +1,5 @@
 <?php
-$ques_id = $_GET['qid'];
+$ques_id = $_POST['qid'];
 session_start();
 ?>
 
