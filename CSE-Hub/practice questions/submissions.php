@@ -1,6 +1,6 @@
 <?php
-$ques_id = $_GET['qid'];
-if(!isset($_GET['qid']))
+$ques_id = $_POST['qid'];
+if(!isset($_POST['qid']))
 {
     echo "      <script>
     alert('No question selected! Please go back');
