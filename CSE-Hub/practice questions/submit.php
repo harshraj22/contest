@@ -38,10 +38,15 @@ else
 $app = $app + 1;
 // $app = $app + "";
 $entry = $ques_id.$app;
-$filename = "./../solutions/$userid/$entry";
+$dir_name = "./../solutions/$userid/$ques_id";
+$filename = "./../solutions/$userid/$ques_id/$entry";
+if(!file_exists("$dir_name"))
+	{
+		mkdir("$dir_name",0777,TRUE);
+	}
 $verdict = "AC"; //Insert actual verdict here after evaluation
 $time = 1; //Insert actual time after eval here
-$query = "INSERT INTO $userid VALUES('$entry','$verdict',$time,'./../solutions/$userid/$ques_id/$entry')";
+$query = "INSERT INTO $userid VALUES('$entry','$verdict',$time,'$filename')";
 $result = mysqli_query($conn,$query);
 if(!$result)
 {
