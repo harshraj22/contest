@@ -18,7 +18,7 @@ $content = fread($content, 25000);
 if($content==""){
     echo <<< _END
         <div>
-            <h1>Error 4040 <br> <h3>The page you requested doesn't exists.</h3></h1>
+            <h1>Error 404 <br> <h3>The page you requested doesn't exists.</h3></h1>
         </div>
 _END;
     exit;
@@ -49,19 +49,21 @@ _END;
         <section class="middle-pane">
 
             <div class="title">
-                <h1 class="ques_id"><?php echo "$ques_id"; ?></h1>
+                <h1 class="ques_id"><?php echo $ques_id; ?></h1>
             </div>
             <div class="submit_top">
-                <form action="submission.html" method="GET">
-                    <button type="submit">Submit</button>
+                <form action="submissions.php" method="POST">
+                <input type="hidden" value="<?php echo $ques_id; ?>" name="qid">
+                    <input type="submit" value="Submit Code">
                 </form>
             </div>
             <div class="container">
                 <?php echo nl2br($content); ?>
             </div>
             <div class="submit_bottom">
-                <form action="submission.html" method="GET">
-                    <button type="submit">Submit</button>
+                <form action="submissions.php" method="POST">
+                <input type="hidden" value="<?php echo $ques_id; ?>" name="qid">
+                    <input type="submit" value="Submit Code">
                 </form>
             </div>
 
