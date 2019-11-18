@@ -98,9 +98,10 @@ _END;
                     <ul class="add">
                     <li class="add">Title: <input type="text" name="title" required></li><br/>
                     <li class="add">contest Id: <input type="text" name="cont_id" required></li><br/><br/>
+                    <li class="add">Team size: <input type="number" name="team" required></li><br/><br/>
                     <li class="add">Total no. of questions in contest: <input type="number" name="ques" required></li><br/><br/>
                     <li class="add">Date<input type="date" name="date" required></li><br/>
-                    <li class="add">Time Limit in minutes:<input type="number" min="0" step="0.5" name="time_limit" required></li><br/>
+                    <li class="add">Time Limit in minutes:<input type="number" min="0" step="5" name="time_limit" required></li><br/>
                     <li class="add">
                     Contest Description: <br/><br/>
                                       <textarea minlength=20 rows = "5" cols = "50" name = "description"></textarea><br/><br/>
